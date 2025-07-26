@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Giorine - Video Editor & Graphic Designer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="logo"></a>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#aboutme">About Me</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    
+    <section id="home" class="home-light-section">
+        <div class="hero-content">
+            <div class="left-content">
+                <h2 class="position">Content Managing</h2>
+                <h1 class="bio">Hi, I'm <span class="highlight">Giorine </span>From<br>The Philippines</h1>
+            </div>
+        </div>
+    </section>
+</main>
+
+  <div class="about-container" id="aboutme">
+    <!-- Left Image -->
+    <div class="about-image">
+      <img src="assets/pfp3.jpg" alt="Profile Picture">
+    </div>
+
+    <!-- Right Content -->
+    <div class="about-content">
+      <h1>About Me</h1>
+      <p>
+        Working with several brands since 2019. For me, being in creative industry for 4 years, client's satisfaction and my relationship with them are the most important gem that I am keeping since I started my journey as Video editor. I always put my 100% efforts with integrity and consistency. I do believe that being skilled is something you can learn anywhere but being an expert with positive behavior are hard to find. You are lucky! You just found one.
+      </p>
+
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('experience')">Experience</div>
+        <div class="tab" onclick="switchTab('skills')">Skills</div>
+      </div>
+
+      <div id="experience" class="tab-content">
+        <div class="title">Video Editor</div>
+        <div class="description">
+          I have extensive experience in Video Editing mainly due to the time I spent working for the prestigious company Vivid Smile. As a seasoned editor, I bring a wealth of experience in utilizing the Adobe After Effects application. My proficiency extends the full spectrum of features and capabilities.
+        </div>
+
+        <div class="title">Graphic Designer</div>
+        <div class="description">
+          I am a skilled Graphic Designer at Vivid Smile, dedicated to crafting visually captivating and effective designs that resonate with target audiences and a deep understanding of design principles. I excel in conceptualizing and executing creative solutions that meet the unique needs of our clients.
+        </div>
+      </div>
+
+      <div id="skills" class="tab-content" style="display: none;">
+        <div class="title">Adobe Premiere Pro</div>
+        <div class="description">
+          Understanding the interface, Importing media, Organizing your media, Advance editing techniques, Using Effects & Transitions, Working with audio, Text & Graphics, Understanding keyframes, Collaboration and Workflow optimization.
+        </div>
+
+        <div class="title">Adobe Photoshop</div>
+        <div class="description">
+          Photo Editing, Retouching, Ecommerce Product Images, Ads and marketing, Social media editing, All kinds of Adobe Photoshop, Adobe Illustrator Editing.
+        </div>
+
+        <div class="title">Adobe After Effects</div>
+        <div class="description">
+          Motion Graphics, Product Ads, YouTube Intro & Outro, Logo Animation, Edit any template in Premiere Pro and After Effects.
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="testimonials-container" id="testimonials">
+    <h1>Testimonials</h1>
+    <div class="testimonial">
+      <p>"Giorine is a true professional. His work is outstanding and he always delivers on time."</p>
+      <video src="assets/testimonials/" alt="testimonial 1"></video>
+    </div>
+  </div>
+
+
+  <script>
+    function switchTab(tab) {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.style.display = 'none');
+
+      document.querySelector('.tab[onclick*="' + tab + '"]').classList.add('active');
+      document.getElementById(tab).style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>

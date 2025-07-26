@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+:root {
+  --primary: #5D3A9B;
+  --accent: #D4A373;
+  --neutral: #4A4E69;
+  --highlight: #F2E9E4;
+  --background: #FFFFFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--neutral);
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header Styles */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(93, 58, 155, 0.2);
+}
+
+.logo {
+  font-size: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--accent);
+}
+
+.logo::before {
+  font-family: 'Bebas Neue', sans-serif;
+  content: "GIO";
+  color: var(--highlight);
+}
+
+.logo::after {
+  font-family: 'Bebas Neue', sans-serif;
+  content: "RINE";
+  color: var(--background);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 40px;
+}
+
+nav a {
+  color: var(--background);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+  position: relative;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+main {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  background: linear-gradient(135deg, var(--primary) 1%, #ffffff 20%, var(--primary) 175%);
+  overflow: hidden;
+}
+
+/* Background Pattern */
+main::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(212, 163, 115, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(212, 163, 115, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 2;
+}
+
+.left-content {
+  text-align: left;
+  max-width: 700px;
+  margin-left: 50px;
+}
+
+.position {
+  font-size: 20px;
+  background: linear-gradient(to right, var(--accent), var(--primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.bio {
+  font-size: 70px;
+  font-weight: bold;
+  color: var(--neutral);
+  line-height: 1;
+  margin-bottom: 40px;
+  text-shadow: 0 4px 20px rgba(255, 255, 255, 0.3);
+}
+
+.highlight {
+  background: linear-gradient(to right, var(--primary), var(--accent));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+
+/* About Section */
+.about-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 40px;
+  background: var(--background);
+}
+
+.about-image {
+  flex-shrink: 0;
+}
+
+.about-image img {
+  width: 400px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+  background-color: #D9D9D9;
+  border: 3px solid var(--background);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about-content {
+  flex: 1;
+  min-width: 0;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--primary);
+  margin: 0 0 20px 0;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--neutral);
+  margin: 0 0 30px 0;
+}
+
+.tabs {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--neutral);
+}
+
+.tab {
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.tab::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background-color: var(--accent);
+  transition: width 0.3s;
+}
+
+.tab:hover::after,
+.tab.active::after {
+  width: 100%;
+}
+
+.tab.active {
+  color: var(--accent);
+}
+
+.tab.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background-color: var(--accent);
+}
+
+.tab-content {
+  margin-top: 0;
+}
+
+.title {
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.description {
+  margin-top: 0;
+  font-size: 16px;
+  color: var(--neutral);
+  line-height: 1.6;
+  background-color: var(--highlight);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.home-light-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+  background: linear-gradient(135deg, var(--primary) 1%, #ffffff 20%, var(--primary) 175%);
+  overflow: hidden;
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 80px 40px;
+  background: var(--background);
+}
+
+@keyframes animated-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+  
+  nav ul {
+    gap: 20px;
+  }
+  
+  .hero-content {
+    padding: 0 20px;
+  }
+  
+  .bio {
+    font-size: 48px;
+  }
+  
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    padding: 40px 20px;
+  }
+  
+  .about-image img {
+    width: 250px;
+    height: 350px;
+  }
+  
+  .about-content {
+    text-align: center;
+  }
+  
+  .tabs {
+    justify-content: center;
+  }
+}
