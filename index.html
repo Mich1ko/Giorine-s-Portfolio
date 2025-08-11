@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<<<<<<< HEAD
   <meta charset="UTF-8">
   <title>Giorine - Video Editor & Graphic Designer</title>
   <link rel="stylesheet" href="styles.css">
@@ -9,148 +8,234 @@
 <body>
   <header>
     <a href="#" class="logo"></a>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#aboutme">About Me</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="nav-menu">
+      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-list">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#aboutme" class="nav-link">About Me</a></li>
+        <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li><a href="#client-results" class="nav-link">Client Results</a></li>
+        <li><a href="#whyme" class="nav-link">Why Me</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#contact" class="nav-link">Contacts</a></li>
+      </ul>
     </nav>
-</header>
-
-<main>
-    
-    <section id="home" class="home-light-section">
-        <div class="hero-content">
-            <div class="left-content">
-                <h2 class="position">Content Managing</h2>
-                <h1 class="bio">Hi, I'm <span class="highlight">Giorine </span>From<br>The Philippines</h1>
-            </div>
-        </div>
-    </section>
-</main>
+  </header>
+  
+  <main>
+      
+      <section id="home" class="home-light-section">
+          <div class="hero-content">
+              <div class="left-content">
+                  <h2 class="position">Content Management</h2>
+                  <h1 class="bio">Hi, I'm <span class="highlight">Giorine </span>From<br>The Philippines</h1>
+                  <div class="typing-text">
+                      <span id="typing-text"></span>
+                      <span class="cursor">|</span>
+                  </div>
+              </div>
+          </div>
+      </section>
+  </main>
 
   <div class="about-container" id="aboutme">
     <!-- Left Image -->
-    <div class="about-image">
+    <div class="about-image slide-in-left">
       <img src="assets/pfp3.jpg" alt="Profile Picture">
     </div>
 
     <!-- Right Content -->
-    <div class="about-content">
-      <h1>About Me</h1>
-      <p>
+    <div class="about-content slide-in-right">
+      <h1 class="fade-in">About Me</h1>
+      <p class="fade-in">
         Working with several brands since 2019. For me, being in creative industry for 4 years, client's satisfaction and my relationship with them are the most important gem that I am keeping since I started my journey as Video editor. I always put my 100% efforts with integrity and consistency. I do believe that being skilled is something you can learn anywhere but being an expert with positive behavior are hard to find. You are lucky! You just found one.
       </p>
 
-      <div class="tabs">
+      <div class="tabs fade-in">
         <div class="tab active" onclick="switchTab('experience')">Experience</div>
         <div class="tab" onclick="switchTab('skills')">Skills</div>
       </div>
 
       <div id="experience" class="tab-content">
-        <div class="title">Video Editor</div>
-        <div class="description">
+        <div class="title fade-in">Video Editor</div>
+        <div class="description fade-in">
           I have extensive experience in Video Editing mainly due to the time I spent working for the prestigious company Vivid Smile. As a seasoned editor, I bring a wealth of experience in utilizing the Adobe After Effects application. My proficiency extends the full spectrum of features and capabilities.
         </div>
 
-        <div class="title">Graphic Designer</div>
-        <div class="description">
+        <div class="title fade-in">Graphic Designer</div>
+        <div class="description fade-in">
           I am a skilled Graphic Designer at Vivid Smile, dedicated to crafting visually captivating and effective designs that resonate with target audiences and a deep understanding of design principles. I excel in conceptualizing and executing creative solutions that meet the unique needs of our clients.
         </div>
       </div>
 
       <div id="skills" class="tab-content" style="display: none;">
-        <div class="title">Adobe Premiere Pro</div>
-        <div class="description">
+        <div class="title fade-in">Adobe Premiere Pro</div>
+        <div class="description fade-in">
           Understanding the interface, Importing media, Organizing your media, Advance editing techniques, Using Effects & Transitions, Working with audio, Text & Graphics, Understanding keyframes, Collaboration and Workflow optimization.
         </div>
 
-        <div class="title">Adobe Photoshop</div>
-        <div class="description">
+        <div class="title fade-in">Adobe Photoshop</div>
+        <div class="description fade-in">
           Photo Editing, Retouching, Ecommerce Product Images, Ads and marketing, Social media editing, All kinds of Adobe Photoshop, Adobe Illustrator Editing.
         </div>
 
-        <div class="title">Adobe After Effects</div>
-        <div class="description">
+        <div class="title fade-in">Adobe After Effects</div>
+        <div class="description fade-in">
           Motion Graphics, Product Ads, YouTube Intro & Outro, Logo Animation, Edit any template in Premiere Pro and After Effects.
         </div>
       </div>
     </div>
   </div>
   <div class="testimonials-container" id="testimonials">
-    <h1>Testimonials</h1>
-    <div class="testimonial">
-      <p>"Giorine is a true professional. His work is outstanding and he always delivers on time."</p>
-      <video src="assets/testimonials/" alt="testimonial 1"></video>
+    <div class="testimonials-header fade-in">
+      <h1>Client Testimonials</h1>
+      <p>Hear what my clients have to say about working with me</p>
+    </div>
+    
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="video-container">
+          <video controls poster="assets/testimonials/TESTIMONIAL  1.mp4">
+            <source src="assets/testimonials/TESTIMONIAL  1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="play-overlay">
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="testimonial-content">
+          <h3>Client Testimonial #1</h3>
+          <p>"Exceptional work quality and professional communication throughout the project."</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="video-container">
+          <video controls poster="assets/testimonials/TESTIMONIAL 2.mp4">
+            <source src="assets/testimonials/TESTIMONIAL 2.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="play-overlay">
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="testimonial-content">
+          <h3>Client Testimonial #2</h3>
+          <p>"Delivered exactly what I envisioned and exceeded my expectations."</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="video-container">
+          <video controls poster="assets/testimonials/TESTIMONIAL 3.mp4">
+            <source src="assets/testimonials/TESTIMONIAL 3.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div class="play-overlay">
+            <div class="play-button">▶</div>
+          </div>
+        </div>
+        <div class="testimonial-content">
+          <h3>Client Testimonial #3</h3>
+          <p>"Highly recommend! Great attention to detail and timely delivery."</p>
+        </div>
+      </div>
     </div>
   </div>
 
+  <!-- Client Results Section -->
+  <section id="client-results" class="client-results-section">
+    <div class="client-results-header fade-in">
+      <h1>Client Results</h1>
+      <p>Highlights from recent campaigns and channel insights.</p>
+    </div>
 
-  <script>
-    function switchTab(tab) {
-      const tabs = document.querySelectorAll('.tab');
-      const contents = document.querySelectorAll('.tab-content');
+    <div class="client-results-grid slide-in-left">
+      <figure class="result-card wide">
+        <img src="assets/client results/CLIENT RESULTS 1.jpg" alt="Client result 1" data-lightbox>
+      </figure>
+      <figure class="result-card tall">
+        <img src="assets/client results/ANALYTICS & RESULTS ON YT.jpeg" alt="YouTube analytics results" data-lightbox>
+      </figure>
+      <figure class="result-card">
+        <img src="assets/client results/CLIENT RESULTS 2.jpg" alt="Client result 2" data-lightbox>
+      </figure>
+      <figure class="result-card">
+        <img src="assets/client results/CLIENT RESULTS 3.jpg" alt="Client result 3" data-lightbox>
+      </figure>
+      <figure class="result-card wide">
+        <img src="assets/client results/CLIENT RESULTS 4.jpg" alt="Client result 4" data-lightbox>
+      </figure>
+      <figure class="result-card">
+        <img src="assets/client results/meida.jpg" alt="Client media result" data-lightbox>
+      </figure>
+    </div>
+  </section>
+ 
+  <!-- Why Me Section -->
+  <section id="whyme" class="whyme-section">
+    <div class="whyme-header fade-in">
+      <h1>Why Choose Me</h1>
+      <p>Results-driven creative with a clean, modern aesthetic and consistent delivery.</p>
+    </div>
 
-      tabs.forEach(t => t.classList.remove('active'));
-      contents.forEach(c => c.style.display = 'none');
+    <div class="whyme-features">
+      <div class="whyme-feature slide-in-left">
+        <div class="feature-content">
+          <h2>AUTOMATE YOUR CONTENTS AND BRANDS</h2>
+          <p>
+            I don’t just deliver content — I build content that performs, resonates, and drives long-term value.
+            With a multi-disciplinary skill set across video editing, organic content strategy, and social media
+            management, I offer a streamlined approach that keeps your brand cohesive across platforms.
+          </p>
+        </div>
+        <div class="feature-media">
+          <img src="assets/client results/CLIENT RESULTS 1.jpg" alt="Automated content and brand systems result" data-lightbox>
+        </div>
+      </div>
 
-      document.querySelector('.tab[onclick*="' + tab + '"]').classList.add('active');
-      document.getElementById(tab).style.display = 'block';
-    }
-  </script>
+      <div class="whyme-feature reverse slide-in-right">
+        <div class="feature-content">
+          <h2>PROVEN AND TESTED DRIVEN RESULTS</h2>
+          <p>
+            What makes me different is the results I bring to the table. I’ve helped clients generate 20M+ organic
+            views, with standout successes like an Instagram Reel that hit 4.5M views and a YouTube Short that gained
+            over 350K views — all without paid promotions. This proves that the right content, with the right strategy,
+            reaches the right people.
+          </p>
+        </div>
+        <div class="feature-media">
+          <img src="assets/client results/ANALYTICS & RESULTS ON YT.jpeg" alt="Analytics and results showcasing proven growth" data-lightbox>
+        </div>
+      </div>
+    </div>
+
+    <div class="whyme-carousel slide-in-right">
+      <button class="carousel-arrow left" aria-label="Previous image">&#10094;</button>
+
+      <div class="carousel-frame">
+        <div class="carousel-gradient"></div>
+        <img id="whyme-image" src="assets/whyme/meida.jpg" alt="Showcase image 1" />
+      </div>
+
+      <button class="carousel-arrow right" aria-label="Next image">&#10095;</button>
+    </div>
+
+    <div id="whyme-dots" class="carousel-dots fade-in" aria-label="Slide indicators"></div>
+  </section>
+
+  <!-- Lightbox for full-screen image -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Full-screen image" style="display:none">
+    <button class="lightbox-close" aria-label="Close full-screen">×</button>
+    <img id="lightbox-img" alt="Expanded showcase" />
+  </div>
+ 
+ 
+  <script src="main.js"></script>
 
 </body>
 </html>
-=======
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="">
-    <title>Giorine Galleto Portfolio</title>
-</head>
-<body>
-    <header>
-        <a href="#" class="logo">GIORINE</a>
-        <nav>
-            <ul>
-                <div class="#nav-links"></div>
-                <li><a href="#aboutme">About Me</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#whyme">Why Me</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#socials">Contact Me></a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <div class="hero-content"></div>
-            <div class="left-content">
-                <h2 class="position" id="position-text">Content Managing</h2>
-                <h1 class="bio" id="bio-text">Hi, Im <span class="highlight">Giorine</span> From<br>The Philippines</h1>
-            </div>
-
-        <section id="about-me" class="fade-in">
-            <div class="image-container">
-                <div class="image-fade-in">
-                    <div class="image-header"></div>
-
-                     <h2>About Me</h2>
-                        <p class="description">Working with several brands since 2019. For me, being in creative industry for 4 years, client’s satisfaction and my relationship with them are the most important gem that I am keeping since I started my journey as Video editor. I always put my 100% efforts with integrity and consistency. I do believe that being skilled is something you can learn anywhere but being an expert with positive behavior are hard to find. You are lucky! You just found one.</p>
-                    <div class="tabs">
-                        <div class="tab-active" onclick="switchTab('Experience')">Experience</div>
-                        <div class="tab" onclick="switchTab('Skills')">Skills</div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-    </main>
-
-
-</body>
-</html>
->>>>>>> eec75a8cbcb20464d00a9814516f7af8c6dce5fc
