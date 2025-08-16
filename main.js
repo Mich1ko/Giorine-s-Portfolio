@@ -308,4 +308,264 @@ document.addEventListener('DOMContentLoaded', function() {
   
   window.addEventListener('scroll', updateActiveLink);
   updateActiveLink(); // Initial call
+
+  // Contact Form Functionality
+  const contactForm = document.getElementById('contactForm');
+  const formSuccess = document.getElementById('formSuccess');
+
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const subject = formData.get('subject');
+      const message = formData.get('message');
+      
+      // Validate form data
+      if (!name || !email || !subject || !message) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+      
+      // Show loading state
+      const submitBtn = contactForm.querySelector('.submit-btn');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = '<span class="btn-text">Sending...</span><span class="btn-icon">⏳</span>';
+      submitBtn.disabled = true;
+      
+      // Simulate email sending (replace with actual email service)
+      setTimeout(() => {
+        // Here you would typically send the data to your email service
+        // For now, we'll simulate a successful submission
+        
+        // Hide form and show success message
+        contactForm.style.display = 'none';
+        formSuccess.style.display = 'block';
+        
+        // Reset form
+        contactForm.reset();
+        
+        // Reset button
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        
+        // Optional: Send to email service (uncomment and configure)
+        // sendEmailToService(name, email, subject, message);
+        
+      }, 2000);
+    });
+  }
+
+  // Social Media Link Hover Effects
+  const socialLinks = document.querySelectorAll('.social-link');
+  
+  socialLinks.forEach(link => {
+    link.addEventListener('mouseenter', function() {
+      this.style.transform = 'translateX(10px) scale(1.02)';
+    });
+    
+    link.addEventListener('mouseleave', function() {
+      this.style.transform = 'translateX(0) scale(1)';
+    });
+  });
+
+  // Input Focus Effects
+  const formInputs = document.querySelectorAll('.input-wrapper input, .input-wrapper textarea');
+  
+  formInputs.forEach(input => {
+    input.addEventListener('focus', function() {
+      this.parentElement.classList.add('focused');
+    });
+    
+    input.addEventListener('blur', function() {
+      if (!this.value) {
+        this.parentElement.classList.remove('focused');
+      }
+    });
+    
+    // Handle label animation on input
+    input.addEventListener('input', function() {
+      if (this.value) {
+        this.parentElement.classList.add('has-value');
+      } else {
+        this.parentElement.classList.remove('has-value');
+      }
+    });
+  });
+
+  // Floating Elements Animation
+  const floatingShapes = document.querySelectorAll('.floating-shape');
+  
+  floatingShapes.forEach((shape, index) => {
+    shape.style.animationDelay = `${index * 1.5}s`;
+  });
+
+  // Contact Form Input Validation
+  function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
+
+  function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    let isValid = true;
+    
+    // Clear previous error states
+    document.querySelectorAll('.input-wrapper').forEach(wrapper => {
+      wrapper.classList.remove('error');
+    });
+    
+    if (!name) {
+      document.getElementById('name').parentElement.classList.add('error');
+      isValid = false;
+    }
+    
+    if (!email || !validateEmail(email)) {
+      document.getElementById('email').parentElement.classList.add('error');
+      isValid = false;
+    }
+    
+    if (!subject) {
+      document.getElementById('subject').parentElement.classList.add('error');
+      isValid = false;
+    }
+    
+    if (!message) {
+      document.getElementById('message').parentElement.classList.add('error');
+      isValid = false;
+    }
+    
+    return isValid;
+  }
+
+  // Add error styles to CSS
+  const style = document.createElement('style');
+  style.textContent = `
+    .input-wrapper.error input,
+    .input-wrapper.error textarea {
+      border: 2px solid var(--primary);
+      animation: shake 0.5s ease-in-out;
+    }
+    
+    .input-wrapper.error label {
+      color: var(--primary);
+    }
+    
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+    
+    .input-wrapper.focused label {
+      color: var(--accent);
+      transform: translateY(-12px) scale(0.8);
+    }
+    
+    .input-wrapper.has-value label {
+      color: var(--accent);
+      transform: translateY(-12px) scale(0.8);
+    }
+  `;
+  document.head.appendChild(style);
+});
+
+// Email Service Function (configure with your preferred service)
+function sendEmailToService(name, email, subject, message) {
+  // Example using EmailJS (you'll need to sign up and configure)
+  // emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+  //   from_name: name,
+  //   from_email: email,
+  //   subject: subject,
+  //   message: message,
+  //   to_email: 'giorine@creative.com'
+  // });
+  
+  // Example using Formspree
+  // fetch('https://formspree.io/f/YOUR_FORM_ID', {
+  //   method: 'POST',
+  //   headers: {
+  //     'Content-Type': 'application/json',
+  //   },
+  //   body: JSON.stringify({
+  //     name: name,
+  //     email: email,
+  //     subject: subject,
+  //     message: message
+  //   })
+  // });
+  
+  // Example using Netlify Forms
+  // The form will automatically work if you add netlify attribute to the form
+  // <form id="contactForm" class="contact-form" netlify>
+  
+  console.log('Email data:', { name, email, subject, message });
+}
+
+// --- Services interactions (plain JS) ---
+// Prefill contact form and scroll to contact section
+function prefillContact(serviceTitle) {
+  const subject = document.getElementById('subject');
+  const message = document.getElementById('message');
+  if (subject) subject.value = `Inquiry: ${serviceTitle}`;
+  if (message) message.value = `Hi Giorine,\n\nI'm interested in your ${serviceTitle} service. Please share pricing & availability.`;
+
+  // mark has-value so floating labels animate
+  document.querySelectorAll('.input-wrapper').forEach(w => {
+    const input = w.querySelector('input, textarea');
+    if (input && input.value) w.classList.add('has-value');
+  });
+
+  const contact = document.getElementById('contact');
+  if (contact) contact.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Details toggle (expands simple info inline)
+document.addEventListener('click', function (e) {
+  const detailsBtn = e.target.closest && e.target.closest('.details-btn');
+  if (detailsBtn) {
+    const card = detailsBtn.closest('.service-card');
+    if (!card) return;
+    let extra = card.querySelector('.service-extra');
+    if (extra) {
+      // toggle
+      card.classList.remove('open');
+      extra.remove();
+      detailsBtn.textContent = 'Details';
+      return;
+    }
+
+    extra = document.createElement('div');
+    extra.className = 'service-extra';
+    extra.style.marginTop = '8px';
+    extra.style.color = 'var(--neutral)';
+    extra.textContent = 'Includes 1 free revision, source files on request, and quick 24-72h turnaround for short-form edits.';
+    card.appendChild(extra);
+    // trigger CSS animation
+    requestAnimationFrame(() => card.classList.add('open'));
+    detailsBtn.textContent = 'Close';
+  }
+
+  const hireBtn = e.target.closest && e.target.closest('.hire-btn');
+  if (hireBtn) {
+    const svc = hireBtn.getAttribute('data-service') || hireBtn.closest('.service-card')?.querySelector('.service-title')?.textContent;
+    if (svc) {
+      e.preventDefault();
+      prefillContact(svc);
+    }
+  }
 });
